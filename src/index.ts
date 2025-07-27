@@ -16,6 +16,12 @@ app.use(
 ); // now TypeScript won't complain
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.json({
+    message: "Exam Grid OTP Service is running",
+  });
+});
+
 app.use("/", otpRoutes);
 
 const PORT = 8080;
