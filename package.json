@@ -1,22 +1,16 @@
 {
   "name": "otp",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
- "scripts": {
-    "start": "nodemon src/index.ts",
+  "description": "OTP Service with Express and TypeScript",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "pnpm build && nodemon dist/index.js",
+    "start": "node dist/index.js",
     "build": "rimraf dist && tsc",
-    "ts.check": "tsc --project tsconfig.json",
-    "add-build": "git add dist",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tsc --noEmit && nodemon src/index.ts",
-    "vercel-build": "pnpm run build"
+    "ts.check": "tsc --noEmit",
+    "vercel-build": "pnpm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "pre-commit": [
-    "ts.check",
-    "build",
-    "add-build"
-  ],
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -31,9 +25,8 @@
   "devDependencies": {
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
-    "@types/node": "^24.0.14",
+    "@types/node": "^20.6.0",
     "nodemon": "^3.1.10",
-    "pre-commit": "^1.2.2",
     "rimraf": "^6.0.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
