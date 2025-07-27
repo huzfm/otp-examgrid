@@ -27,8 +27,8 @@ exports.verifyOtp = (req: Request, res: Response) => {
   const valid = verifyOtp(email, otp);
 
   if (valid) {
-    return res.status(200).json({ message: "Your OTP is correct." });
+    return res.status(200).json({ message: "Correct" });
   } else {
-    return res.status(401).json({ error: "Invalid or expired OTP." });
+    return res.status(401).json({ error: "Incorrect or expired" });
   }
 };
