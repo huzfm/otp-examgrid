@@ -6,11 +6,9 @@ const router = Router();
 
 router.post("/send-otp", ratelimiter, sendOtp);
 router.post("/verify-otp", verifyOtp);
-
 router.get("/", (_req, res) => {
-  res.json({
-    message: "api-otp-routes running",
-  });
+  res.send("OTP Service is running");
 });
+
 
 export default router;
