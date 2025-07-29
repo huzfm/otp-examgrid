@@ -29,6 +29,6 @@ exports.verifyOtp = (req: Request, res: Response) => {
   if (valid) {
     return res.status(200).json({ message: "correct" });
   } else {
-    return res.status(401).json({ error: "incorrect or expired" });
+    return res.status(401).json({ error: "incorrect" });
   }
 };
